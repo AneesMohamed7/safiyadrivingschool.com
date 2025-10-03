@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Safiya Driving School</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #8B0000;
+    --secondary-color: #FF6B35;
+    --accent-color: #FFA500;
+    --dark-color: #2C1810;
+    --light-color: #F8F9FA;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --gradient-primary: linear-gradient(135deg, #8B0000 0%, #A52A2A 100%);
+    --gradient-secondary: linear-gradient(135deg, #FF6B35 0%, #FFA500 100%);
+    --gradient-accent: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+    --shadow-light: 0 4px 20px rgba(139, 0, 0, 0.08);
+    --shadow-medium: 0 8px 30px rgba(139, 0, 0, 0.12);
+    --shadow-heavy: 0 15px 40px rgba(139, 0, 0, 0.15);
+    --shadow-card: 0 2px 15px rgba(0, 0, 0, 0.06);
+    --shadow-card-hover: 0 8px 35px rgba(139, 0, 0, 0.15);
+    --border-radius-sm: 12px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 24px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Call Bar */
+.call-bar {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+.call-bar a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-light);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+
+.logo h3 {
+    color: var(--primary-color);
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.logo span {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hero Section - Red Background */
+.hero {
+    background:
+       linear-gradient(135deg, #7a0000 0%, #8B0000 50%, #5c0000 100%);
+
+    padding: 150px 1rem 60px;
+    text-align: center;
+    position: relative;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.accent-top {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    padding: 0.35rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.9rem;
+}
+
+.hero h1 {
+    font-size: clamp(1.6rem, 8vw, 2.4rem);
+    line-height: 1.03;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    margin: 0.6rem 0;
+    text-transform: uppercase;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 .accent {
+    color: var(--accent-color);
+    display: block;
+    font-weight: 900;
+}
+
+.hero-sub {
+    color: #F8F9FA;
+    font-size: 0.98rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.78rem 1.2rem;
+    border-radius: 28px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: 0;
+    transition: transform 0.18s ease, opacity 0.18s;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background: #FF8C00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.4);
+}
+
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.car-wrap {
+    margin-top: 1.2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.car-box {
+    width: 70%;
+    max-width: 320px;
+    transform: translateY(6px);
+}
+
+.car-shadow {
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 28px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    filter: blur(6px);
+    opacity: 0.9;
+}
+
+/* Student Rating & Feedback Section */
+.rating-section {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.rating-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    padding: 3rem 2.5rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(139, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.rating-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--gradient-primary);
+}
+
+.rating-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.rating-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+}
+
+.rating-header h2 span {
+    color: var(--primary-color);
+}
+
+.rating-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.rating-form {
+    display: grid;
+    gap: 2rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.form-label.required::after {
+    content: '*';
+    color: var(--primary-color);
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+/* Star Rating System - Accessible & Mobile-Friendly */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1rem 0;
+    font-size: 0;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    color: #ddd;
+    font-size: 2.2rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.star-rating label::before {
+    content: '★';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input[type="radio"]:checked ~ label {
+    color: var(--accent-color);
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+.star-rating label:hover::before,
+.star-rating input[type="radio"]:checked ~ label::before {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.star-rating input[type="radio"]:checked ~ label {
+    animation: starPulse 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes starPulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1.1); }
+}
+
+.rating-text {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    min-height: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.rating-text.active {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Form Inputs */
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid rgba(139, 0, 0, 0.1);
+    border-radius: var(--border-radius-sm);
+    font-family: inherit;
+    font-size: 1rem;
+    background: rgba(139, 0, 0, 0.02);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    color: var(--text-dark);
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(139, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 45px;
+    appearance: none;
+}
+
+/* Two Column Layout for Form */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Verification Badge */
+.verification-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    padding: 0.6rem 1rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.verification-badge.show {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.verification-badge i {
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    padding: 18px 30px;
+    border-radius: var(--border-radius-sm);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.3);
+    width: 100%;
+    margin-top: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #A52A2A 0%, #8B0000 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 0, 0, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Success Message */
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    text-align: center;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    display: none;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Existing Reviews Display */
+.reviews-display {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(139, 0, 0, 0.1);
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reviews-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.reviews-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.average-rating {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.rating-breakdown {
+    text-align: left;
+}
+
+.rating-breakdown div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.review-item {
+    background: rgba(139, 0, 0, 0.02);
+    border-radius: var(--border-radius-sm);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.review-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.review-stars {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.review-text {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-heavy);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+}
+
+.whatsapp-float i {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+/* Section Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.section-header h2 span {
+    color: var(--primary-color);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: var(--light-color);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.about-text h3:first-child {
+    margin-top: 0;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.values-list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.values-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.values-list i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 20px;
+}
+
+/* Enhanced Stats Section - Modern Card Design */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(139, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.stat-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(139, 0, 0, 0.15);
+}
+
+.stat-item:hover::before {
+    transform: scaleX(1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.8rem;
+    line-height: 1;
+    text-shadow: none;
+}
+
+.stat-label {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Stats Animation */
+.stat-item.animate .stat-number {
+    animation: countUp 2s ease-out;
+}
+
+@keyframes countUp {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.about-images {
+    display: block;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+.image-grid img:first-child {
+    grid-column: 1 / -1;
+    height: 200px;
+}
+
+/* Why Choose Us Section - Enhanced Feature Cards */
+.why-choose {
+    padding: 80px 0;
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--white);
+    border-radius: var(--border-radius-xl);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(139, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(5px);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(139, 0, 0, 0.12);
+}
+
+.feature-icon {
+    width: 90px;
+    height: 90px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(139, 0, 0, 0.25);
+    transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotateY(360deg);
+    box-shadow: 0 12px 35px rgba(139, 0, 0, 0.35);
+}
+
+.feature-icon i {
+    font-size: 2.2rem;
+    color: var(--white);
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    transform: scale(1.1);
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h3 {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.footer-section p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.footer-section h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.social-links a:hover {
+    background: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.4);
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: #ccc;
+}
+
+.footer-contact i {
+    color: var(--accent-color);
+    width: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    .star-rating label,
+    .submit-btn,
+    .stat-item.animate .stat-number,
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-images {
+        display: none;
+    }
+    
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .car-box {
+        max-width: 420px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .rating-container {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 110px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-medium);
+        padding: 2rem 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        padding: 1rem;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .hero {
+        padding: 130px 1rem 40px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .star-rating label {
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
+    }
+    
+    .rating-container {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .reviews-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 120px 15px 30px;
+    }
+    
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+    
+    .about, .why-choose, .rating-section {
+        padding: 50px 0;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .car-box {
+        max-width: 280px;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .feature-icon {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .rating-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .star-rating label {
+        width: 40px;
+        height: 40px;
+        font-size: 1.8rem;
+    }
+    
+    .rating-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+</style>
+</head>
+<body>
+    <!-- Top Call Bar -->
+    <div class="call-bar">
+        <a href="tel:+919876543210">📞 Call Now: +91 98765 43210 - Get Your License Today!</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                <div>
+                    <h3>Safiya Driving School</h3>
+                    <span>Professional Training</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Services</a>
+                <a href="#rating" class="nav-link">Reviews</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="accent-top">🏆 Kerala's #1 Driving School</div>
+            <h1>
+                Master the Road with 
+                <span class="accent">Confidence</span>
+            </h1>
+            <p class="hero-sub">Professional driving lessons with experienced instructors. Get your license faster with our proven teaching methods.</p>
+            
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Book Free Trial</a>
+                <a href="tel:+919876543210" class="btn btn-ghost">Call Now</a>
+            </div>
+            
+            <div class="car-wrap">
+                <div class="car-box">
+                    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Car Body -->
+                        <rect x="50" y="120" width="300" height="60" rx="15" fill="#FF6B35"/>
+                        <rect x="70" y="100" width="260" height="40" rx="20" fill="#8B0000"/>
+                        
+                        <!-- Windows -->
+                        <rect x="80" y="110" width="80" height="25" rx="5" fill="#87CEEB" opacity="0.8"/>
+                        <rect x="170" y="110" width="80" height="25" rx="5" fill="#87CEEB" opacity="0.8"/>
+                        <rect x="260" y="110" width="60" height="25" rx="5" fill="#87CEEB" opacity="0.8"/>
+                        
+                        <!-- Wheels -->
+                        <circle cx="120" cy="180" r="25" fill="#333"/>
+                        <circle cx="120" cy="180" r="15" fill="#666"/>
+                        <circle cx="280" cy="180" r="25" fill="#333"/>
+                        <circle cx="280" cy="180" r="15" fill="#666"/>
+                        
+                        <!-- Headlights -->
+                        <circle cx="40" cy="140" r="8" fill="#FFF"/>
+                        <circle cx="40" cy="160" r="8" fill="#FFF"/>
+                        
+                        <!-- Details -->
+                        <rect x="340" y="130" width="20" height="30" rx="10" fill="#FF0000"/>
+                        <rect x="60" y="140" width="8" height="15" rx="2" fill="#FFA500"/>
+                    </svg>
+                </div>
+                <div class="car-shadow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About <span>Safiya Driving School</span></h2>
+                <p>Kerala's most trusted driving school with over a decade of excellence in driver education</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>To create confident, skilled, and responsible drivers who contribute to safer roads in Kerala. We believe that proper driver education is the foundation of road safety.</p>
+                    
+                    <h3>Why We're Different</h3>
+                    <p>Our comprehensive approach combines theoretical knowledge with practical skills, ensuring our students become not just licensed drivers, but responsible road users.</p>
+                    
+                    <ul class="values-list">
+                        <li><i class="fas fa-check-circle"></i> RTO Approved Training Center</li>
+                        <li><i class="fas fa-check-circle"></i> Experienced & Certified Instructors</li>
+                        <li><i class="fas fa-check-circle"></i> Modern Training Vehicles</li>
+                        <li><i class="fas fa-check-circle"></i> Flexible Scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> High Success Rate</li>
+                    </ul>
+                </div>
+                
+                <div class="about-images">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2500+</span>
+                            <p class="stat-label">Students Trained</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <p class="stat-label">Pass Rate</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <p class="stat-label">Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span>Safiya Driving School</span>?</h2>
+                <p>Experience the difference with our professional training approach and modern facilities</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from RTO-certified instructors with years of experience in driver education and road safety training.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Modern Vehicles</h3>
+                    <p>Train with well-maintained, modern vehicles equipped with dual controls for maximum safety during lessons.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Flexible Timing</h3>
+                    <p>Choose convenient time slots that fit your schedule, including weekend and evening sessions.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h3>RTO Test Routes</h3>
+                    <p>Practice on actual RTO test routes to boost your confidence and ensure success in your driving test.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get round-the-clock support for scheduling, queries, and emergency assistance throughout your learning journey.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>High Success Rate</h3>
+                    <p>Join thousands of successful students with our proven teaching methodology and 95% first-time pass rate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Rating & Feedback Section -->
+    <section class="rating-section" id="rating">
+        <div class="container">
+            <div class="section-header">
+                <h2>Rate Your <span>Training Experience</span></h2>
+                <p>Help future students choose confidently by sharing your learning experience with us</p>
+            </div>
+            
+            <div class="rating-container">
+                <div class="rating-header">
+                    <h2>Student <span>Feedback</span></h2>
+                    <p>Your honest feedback helps us improve our services and assists new students in making informed decisions.</p>
+                </div>
+                
+                <form class="rating-form" id="ratingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label required">Full Name</label>
+                            <input type="text" class="form-input" id="studentName" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Phone Number</label>
+                            <input type="tel" class="form-input" id="studentPhone" required placeholder="+91 XXXXX XXXXX">
+                            <div class="verification-badge" id="phoneVerified">
+                                <i class="fas fa-shield-check"></i>
+                                Verified Student
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" id="studentEmail" placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label required">Course Completed</label>
+                            <select class="form-select" id="courseType" required>
+                                <option value="">Select Course</option>
+                                <option value="2-wheeler">Two Wheeler Training</option>
+                                <option value="4-wheeler-manual">Four Wheeler (Manual)</option>
+                                <option value="4-wheeler-automatic">Four Wheeler (Automatic)</option>
+                                <option value="commercial">Commercial Vehicle</option>
+                                <option value="refresher">Refresher Course</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label required">Overall Experience Rating</label>
+                        <div class="star-rating" id="starRating">
+                            <input type="radio" name="rating" value="5" id="star5">
+                            <label for="star5"></label>
+                            <input type="radio" name="rating" value="4" id="star4">
+                            <label for="star4"></label>
+                            <input type="radio" name="rating" value="3" id="star3">
+                            <label for="star3"></label>
+                            <input type="radio" name="rating" value="2" id="star2">
+                            <label for="star2"></label>
+                            <input type="radio" name="rating" value="1" id="star1">
+                            <label for="star1"></label>
+                        </div>
+                        <div class="rating-text" id="ratingText">Please select a rating</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Your Feedback</label>
+                        <textarea class="form-textarea" id="feedback" placeholder="Share your experience, what you liked most, and any suggestions for improvement..." rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Instructor Name</label>
+                            <input type="text" class="form-input" id="instructorName" placeholder="Your instructor's name (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Would you recommend us?</label>
+                            <select class="form-select" id="recommendation">
+                                <option value="">Select option</option>
+                                <option value="definitely">Definitely Yes</option>
+                                <option value="probably">Probably Yes</option>
+                                <option value="maybe">Maybe</option>
+                                <option value="probably-not">Probably Not</option>
+                                <option value="definitely-not">Definitely Not</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Feedback
+                    </button>
+                    
+                    <div class="success-message" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        Thank you for your valuable feedback! Your review helps us improve our services.
+                    </div>
+                </form>
+                
+                <!-- Display Recent Reviews -->
+                <div class="reviews-display">
+                    <div class="reviews-header">
+                        <h3>What Our Students Say</h3>
+                        <div class="reviews-stats">
+                            <div class="average-rating" id="averageRating">4.8</div>
+                            <div class="rating-breakdown">
+                                <div>★★★★★ <span>85%</span></div>
+                                <div>★★★★☆ <span>12%</span></div>
+                                <div>★★★☆☆ <span>2%</span></div>
+                                <div>★★☆☆☆ <span>1%</span></div>
+                                <div>★☆☆☆☆ <span>0%</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="reviewsList">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Arjun Kumar</span>
+                                <span class="review-date">2 days ago</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">Excellent training experience! The instructors are very patient and knowledgeable. Passed my test on the first attempt.</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Priya Nair</span>
+                                <span class="review-date">1 week ago</span>
+                            </div>
+                            <div class="review-stars">★★★★★</div>
+                            <p class="review-text">Professional and friendly staff. The practice sessions on RTO routes really helped me gain confidence. Highly recommended!</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <span class="reviewer-name">Mohammed Ali</span>
+                                <span class="review-date">2 weeks ago</span>
+                            </div>
+                            <div class="review-stars">★★★★☆</div>
+                            <p class="review-text">Good training center with modern vehicles. The flexible timing options worked perfectly for my schedule. Thanks!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210?text=Hi! I want to know more about driving courses at Safiya Driving School." class="whatsapp-float" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Safiya Driving School</h3>
+                        <span>Your Path to Safe Driving</span>
+                    </div>
+                    <p>Kerala's premier driving school committed to creating confident and responsible drivers through professional training and modern facilities.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Two Wheeler Training</a></li>
+                        <li><a href="#">Four Wheeler Training</a></li>
+                        <li><a href="#">Commercial Vehicle</a></li>
+                        <li><a href="#">Refresher Courses</a></li>
+                        <li><a href="#">RTO Test Preparation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#features">Our Features</a></li>
+                        <li><a href="#rating">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Courses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Kondotty, Malappuram, Kerala</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@safiyadriving.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 6:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Safiya Driving School. All rights reserved. | Designed with ❤️ for safer roads.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Star Rating System
+        const starRating = document.getElementById('starRating');
+        const ratingText = document.getElementById('ratingText');
+        const stars = starRating.querySelectorAll('input[type="radio"]');
+        
+        const ratingTexts = {
+            1: '😞 Poor - We need to improve',
+            2: '😐 Fair - Below expectations', 
+            3: '🙂 Good - Meets expectations',
+            4: '😊 Very Good - Above expectations',
+            5: '🤩 Excellent - Outstanding experience!'
+        };
+
+        stars.forEach(star => {
+            star.addEventListener('change', function() {
+                const rating = this.value;
+                ratingText.textContent = ratingTexts[rating];
+                ratingText.classList.add('active');
+                
+                // Add animation to selected stars
+                const labels = starRating.querySelectorAll('label');
+                labels.forEach((label, index) => {
+                    if (index >= (5 - rating)) {
+                        label.style.animation = 'starPulse 0.6s ease-out';
+                        setTimeout(() => {
+                            label.style.animation = '';
+                        }, 600);
+                    }
+                });
+            });
+        });
+
+        // Phone Verification Simulation
+        const phoneInput = document.getElementById('studentPhone');
+        const phoneVerified = document.getElementById('phoneVerified');
+        
+        phoneInput.addEventListener('input', function() {
+            const phone = this.value.replace(/\D/g, '');
+            if (phone.length === 10) {
+                setTimeout(() => {
+                    phoneVerified.classList.add('show');
+                }, 1000);
+            } else {
+                phoneVerified.classList.remove('show');
+            }
+        });
+
+        // Form Submission
+        const ratingForm = document.getElementById('ratingForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMessage = document.getElementById('successMessage');
+
+        ratingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('studentName').value,
+                phone: document.getElementById('studentPhone').value,
+                email: document.getElementById('studentEmail').value,
+                course: document.getElementById('courseType').value,
+                rating: document.querySelector('input[name="rating"]:checked')?.value,
+                feedback: document.getElementById('feedback').value,
+                instructor: document.getElementById('instructorName').value,
+                recommendation: document.getElementById('recommendation').value,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Validate required fields
+            if (!formData.name || !formData.phone || !formData.course || !formData.rating) {
+                alert('Please fill in all required fields and provide a rating.');
+                return;
+            }
+            
+            // Simulate form submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            setTimeout(() => {
+                // Store in localStorage (in real app, send to server)
+                let reviews = JSON.parse(localStorage.getItem('safiyaReviews') || '[]');
+                reviews.unshift(formData);
+                localStorage.setItem('safiyaReviews', JSON.stringify(reviews));
+                
+                // Show success message
+                successMessage.style.display = 'block';
+                
+                // Reset form
+                ratingForm.reset();
+                ratingText.textContent = 'Please select a rating';
+                ratingText.classList.remove('active');
+                phoneVerified.classList.remove('show');
+                
+                // Add new review to display
+                addReviewToDisplay(formData);
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Feedback';
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+                
+            }, 2000);
+        });
+
+        // Add review to display list
+        function addReviewToDisplay(review) {
+            const reviewsList = document.getElementById('reviewsList');
+            const reviewItem = document.createElement('div');
+            reviewItem.className = 'review-item';
+            
+            const stars = '★'.repeat(parseInt(review.rating)) + '☆'.repeat(5 - parseInt(review.rating));
+            const timeAgo = 'Just now';
+            
+            reviewItem.innerHTML = `
+                <div class="review-header">
+                    <span class="reviewer-name">${review.name}</span>
+                    <span class="review-date">${timeAgo}</span>
+                </div>
+                <div class="review-stars">${stars}</div>
+                <p class="review-text">${review.feedback || 'Great experience with Safiya Driving School!'}</p>
+            `;
+            
+            reviewsList.insertBefore(reviewItem, reviewsList.firstChild);
+            
+            // Update average rating (simplified calculation)
+            updateAverageRating();
+        }
+
+        // Update average rating display
+        function updateAverageRating() {
+            const reviews = JSON.parse(localStorage.getItem('safiyaReviews') || '[]');
+            if (reviews.length > 0) {
+                const totalRating = reviews.reduce((sum, review) => sum + parseInt(review.rating), 0);
+                const average = (totalRating / reviews.length).toFixed(1);
+                document.getElementById('averageRating').textContent = average;
+            }
+        }
+
+        // Load existing reviews on page load
+        window.addEventListener('load', function() {
+            updateAverageRating();
+            
+            // Animate stats on scroll
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.stat-item').forEach(stat => {
+                observer.observe(stat);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form input animations and validations
+        const inputs = document.querySelectorAll('.form-input, .form-textarea, .form-select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Phone number formatting
+        phoneInput.addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            
+            if (value.length > 5) {
+                this.value = `+91 ${value.slice(0, 5)} ${value.slice(5)}`;
+            } else if (value.length > 0) {
+                this.value = `+91 ${value}`;
+            }
+        });
+    </script>
+</body>
+</html>
